@@ -1,4 +1,4 @@
-package Work1_25;
+package work1_25;
 
 import java.util.Stack;
 
