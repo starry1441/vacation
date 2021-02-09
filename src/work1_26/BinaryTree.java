@@ -8,16 +8,6 @@ package work1_26;
  * Time: 9:43
  */
 
-class BTNode {
-    public int val;
-    public BTNode left; //左子树的引用
-    public BTNode right;//右子树的引用
-
-    public BTNode(char val) {
-        this.val = val;
-    }
-}
-
 public class BinaryTree {
 
     /**
