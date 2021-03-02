@@ -37,6 +37,19 @@ public class SingleLinkedList {
         return head;
     }
 
+    public Node createLinked1() {
+        head = new Node(1);
+        Node node2 = new Node(5);
+        Node node3 = new Node(4);
+        Node node4 = new Node(4);
+        Node node5 = new Node(2);
+        head.next = node2;
+        node2.next = node3;
+        node3.next = node4;
+        node4.next = node5;
+        return head;
+    }
+
     //找最后一个节点
     public Node findLastNode() {
         if (head == null) {
@@ -135,8 +148,8 @@ public class SingleLinkedList {
 
     //删除第一次出现关键字为key的节点
     public void remove(int key){
-        if (head == null) return;;
-        while(head != null && head.val == key) {
+        if (head == null) return;
+        if(head.val == key) {
             head = head.next;
         }
         Node cur = head;
@@ -155,7 +168,7 @@ public class SingleLinkedList {
     //删除所有值为key的节点
     public void removeAllKey(int key){
         if (head == null) return;;
-        if(head.val == key) {
+        while(head != null && head.val == key) {
             head = head.next;
         }
         Node cur = head;
@@ -191,7 +204,29 @@ public class SingleLinkedList {
     }
 
     public void clear(){
-        head.next = null;
+        head = null;
+    }
+
+    public Node partition(Node pHead, int x) {
+        Node headA = new Node(x);
+        Node headB = new Node(x);
+        Node a = headA;
+        Node b = headB;
+        Node cur = pHead;
+        while(cur != null) {
+            if(cur.val < x) {
+                a.next = cur;
+                a = a.next;
+            }else {
+                b.next = cur;
+                b = b.next;
+            }
+            cur = cur.next;
+        }
+        a.next = headB.next;
+        headA = headA.next;
+        b.next = null;
+        return headA;
     }
 
     public static void main(String[] args) {
@@ -225,6 +260,13 @@ public class SingleLinkedList {
         a.display();
         a.removeAllKey(2);
         a.display();
+        System.out.println("=================");
+        a.clear();
+        a.display();
+        SingleLinkedList b = new SingleLinkedList();
+        Node head = b.createLinked1();
+        b.partition(head,5);
+        b.display();
     }
 
 }

@@ -10,19 +10,19 @@ import java.util.Arrays;
  * Time: 12:02
  */
 public class Work1 {
-    class Solution {
-        public int thirdMax(int[] nums) {
-            Arrays.sort(nums);
-            int max = 1;
-            for(int i = nums.length-1; i > 0; i--) {
-                if(nums[i] != nums[i-1]) {
-                    max++;
-                }
-                if(max == 3) {
-                    return nums[i-1];
-                }
+
+    public int thirdMax(int[] nums) {
+        Arrays.sort(nums);
+        int max = 1;
+        for(int i = nums.length-1; i > 0; i--) {
+            if(nums[i] != nums[i-1]) {
+                max++;
             }
-            return nums[nums.length-1];
+            if(max == 3) {
+                return nums[i-1];
+            }
         }
+        return nums[nums.length-1];
     }
+
 }

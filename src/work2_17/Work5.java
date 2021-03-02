@@ -4,7 +4,7 @@ import work2_15.ListNode;
 
 /**
  * Created with IntelliJ IDEA.
- * Description:环形链表 IIhttps://leetcode-cn.com/problems/linked-list-cycle-ii/
+ * Description:环形链表II https://leetcode-cn.com/problems/linked-list-cycle-ii/
  * User: starry
  * Date: 2021 -02 -17
  * Time: 21:47

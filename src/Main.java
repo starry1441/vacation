@@ -1,3 +1,5 @@
+import work2_20.Animal;
+
 import java.util.Arrays;
 
 /**
@@ -7,6 +9,11 @@ import java.util.Arrays;
  * Date: 2021 -02 -07
  * Time: 17:36
  */
+
+
+
+
+
 class Person {
     private String name;
     private int age;
@@ -27,12 +34,63 @@ class Person {
     }
 }
 
-public class Main {
-    public static void main(String[] args) {
+public class Main extends Animal{
+    public static void main1(String[] args) {
         Person person = new Person("caocao",19);
         person.show();
         System.out.println(person);
     }
+
+
+    void func1(int N){
+        int count = 0;
+        for (int i = 0; i < N ; i++) {
+            for (int j = 0; j < N ; j++) {
+                count++;
+            }
+        }
+        for (int k = 0; k < 2 * N ; k++) {
+            count++;
+        }
+        int M = 10;
+        while ((M--) > 0) {
+            count++;
+        }
+        System.out.println(count);
+    }
+
+    int binarySearch(int[] array, int value) {
+        int begin = 0;
+        int end = array.length - 1;
+        while (begin <= end) {
+            int mid = begin + ((end-begin) / 2);
+            if (array[mid] < value)
+                begin = mid + 1;
+            else if (array[mid] > value)
+                end = mid - 1;
+            else
+                return mid;
+        }
+        return -1;
+    }
+
+    public void loop() {
+        int a = 1;
+
+    }
+
+    public void func() {
+        Animal animal = new Animal();
+        System.out.println(super.name);
+    }
+
+    public static void main(String[] args) {
+
+    }
+
+
+
+
 }
 
 
